@@ -1,7 +1,6 @@
 import {
   Drawer,
   DrawerContent,
-  DrawerHeader,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import {
@@ -23,7 +22,7 @@ import React from "react";
 export default function Home() {
   return (
     <>
-      <nav className="py-3 px-5 bg-gray-100 flex justify-center fixed w-full top-0">
+      <nav className="py-3 px-5 bg-gray-100 flex justify-center fixed w-full top-0 border-b border-gray-200 drop-shadow-sm">
         <div className="flex items-center text-lg text-[--primary-color] cursor-pointer absolute left-5 top-[39px] font-medium">
           <MdKeyboardArrowLeft className="text-3xl" />
           <span className="sm:block hidden">Go Back</span>
@@ -70,7 +69,7 @@ export default function Home() {
                 <span className="text-sm">LinkedIn</span>
               </Link>
               <Link
-                href=""
+                href="/resume.pdf"
                 target="_blank"
                 className="bg-gray-100 py-2 px-5 flex flex-col items-center rounded-lg hover:bg-gray-200 transition-colors"
               >

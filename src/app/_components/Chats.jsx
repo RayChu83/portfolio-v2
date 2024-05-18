@@ -1,15 +1,76 @@
 "use client";
-import { ReactTyped } from "react-typed";
+import Link from "next/link";
 
 import React, { useState } from "react";
+import Cta from "./Cta";
+
+const getReceivedMessage = (type, updateChats) => {
+  let message;
+  switch (type) {
+    case "Welcome":
+      message = (
+        <>
+          <p>
+            👋 Welcome, my name is Ray, and I am an aspiring{" "}
+            <strong>Front End Developer </strong>
+            passionate about creating stunning web applications.
+          </p>
+          <Cta type={type} updateChats={updateChats} />
+        </>
+      );
+      break;
+    case "About":
+      message = (
+        <>
+          <p>
+            Hey, I am Ray as mentioned earlier, I was born and raised in
+            Manhattan NY, and I&apos;ve have been{" "}
+            <strong>coding for a little over a year</strong>. Outside of my
+            work, I am currently attending school at the Manhattan Early College
+            School for Advertising while taking courses at the Borough of
+            Manhattan Community College. On a personal level I am very
+            enthusiastic about trying new things and building connections with
+            people. If you have any questions feel free to reach out via{" "}
+            <Link
+              href="https://www.linkedin.com/in/raychu83/"
+              target="_blank"
+              className="font-medium text-[--primary-color]"
+            >
+              {" "}
+              LinkedIn{" "}
+            </Link>
+            or through
+            <Link
+              href="mailto:rayc12079@gmail.com"
+              target="_blank"
+              className="font-medium text-[--primary-color]"
+            >
+              {" "}
+              Email
+            </Link>
+            .
+          </p>
+          <Cta type={type} updateChats={updateChats} />
+        </>
+      );
+      break;
+    default: {
+      message = (
+        <>
+          <p>Unable to handle your request, Please try again!</p>
+        </>
+      );
+    }
+  }
+  return message;
+};
 
 export default function Chats() {
   const [chats, setChats] = useState([
-    { direction: "received", type: "welcome" },
-    { direction: "sent" },
+    { direction: "received", type: "Welcome" },
   ]);
   return (
-    <section className="flex flex-col py-3 px-5 gap-5">
+    <section className="flex flex-col py-3 px-5 gap-3">
       {chats.map((chat) => (
         <article
           key={chat}
@@ -22,13 +83,11 @@ export default function Chats() {
             p-3 rounded-xl max-w-xl
           `}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          {chat.direction === "sent" ? (
+            <p>{chat.message}</p>
+          ) : (
+            getReceivedMessage(chat.type, setChats)
+          )}
         </article>
       ))}
     </section>
