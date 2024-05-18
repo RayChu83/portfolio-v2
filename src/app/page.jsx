@@ -1,11 +1,7 @@
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import {
@@ -13,30 +9,28 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { FaLessThan } from "react-icons/fa6";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import { FaFilePdf } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import Chats from "@/app/_components/Chats";
 
 import React from "react";
 
 export default function Home() {
   return (
-    <main>
-      <nav className="p-3 bg-gray-100 flex justify-center fixed w-full">
-        <div className="flex items-center gap-1 text-lg text-[--primary-color] cursor-pointer absolute left-4 top-[39px] font-medium">
-          <FaLessThan />
-          <span className="sm:block hidden">
-
-          Go Back
-          </span>
+    <>
+      <nav className="py-3 px-5 bg-gray-100 flex justify-center fixed w-full top-0">
+        <div className="flex items-center text-lg text-[--primary-color] cursor-pointer absolute left-5 top-[39px] font-medium">
+          <MdKeyboardArrowLeft className="text-3xl" />
+          <span className="sm:block hidden">Go Back</span>
         </div>
         <Drawer>
           <DrawerTrigger>
-            <div className="cursor-pointer flex flex-col items-center">
+            <div className="cursor-pointer flex flex-col items-center outline-none">
               <Image
                 src={`/ray.jpg`}
                 alt="Ray Chu"
@@ -47,19 +41,17 @@ export default function Home() {
               <h3 className="font-medium">Ray Chu</h3>
             </div>
           </DrawerTrigger>
-          <DrawerContent className="min-h-[80%] h-fit p-3">
-            <DrawerHeader>
-              <div className="cursor-pointer flex flex-col items-center">
-                <Image
-                  src={`/ray.jpg`}
-                  alt="Ray Chu"
-                  className="bg-gray-300 rounded-full"
-                  width="100"
-                  height="100"
-                />
-                <h3 className="font-semibold text-2xl">Ray Chu</h3>
-              </div>
-            </DrawerHeader>
+          <DrawerContent className="min-h-[80%] h-fit p-3 outline-none">
+            <div className="cursor-pointer flex flex-col items-center my-3">
+              <Image
+                src={`/ray.jpg`}
+                alt="Ray Chu"
+                className="bg-gray-300 rounded-full"
+                width="100"
+                height="100"
+              />
+              <h3 className="font-semibold text-2xl">Ray Chu</h3>
+            </div>
             <div className="grid md:grid-cols-4 grid-cols-2 gap-3 mx-auto max-w-[400px] w-[100%]">
               <Link
                 href="mailto:rayc12079@gmail.com"
@@ -101,6 +93,7 @@ export default function Home() {
                 alt="Location"
                 width="400"
                 height="400"
+                className="hover:opacity-50 transition-opacity"
               />
               <article className="p-3 flex flex-col">
                 <h2 className="text-xl font-semibold">New York, NY</h2>
@@ -110,6 +103,9 @@ export default function Home() {
           </DrawerContent>
         </Drawer>
       </nav>
-    </main>
+      <main className="mt-28 max-w-5xl m-auto">
+        <Chats />
+      </main>
+    </>
   );
 }
