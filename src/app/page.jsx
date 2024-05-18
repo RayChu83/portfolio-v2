@@ -29,7 +29,10 @@ export default function Home() {
       <nav className="p-3 bg-gray-100 flex justify-center fixed w-full">
         <div className="flex items-center gap-1 text-lg text-[--primary-color] cursor-pointer absolute left-4 top-[39px] font-medium">
           <FaLessThan />
+          <span className="sm:block hidden">
+
           Go Back
+          </span>
         </div>
         <Drawer>
           <DrawerTrigger>
@@ -44,7 +47,7 @@ export default function Home() {
               <h3 className="font-medium">Ray Chu</h3>
             </div>
           </DrawerTrigger>
-          <DrawerContent className="h-[80%]">
+          <DrawerContent className="min-h-[80%] h-fit p-3">
             <DrawerHeader>
               <div className="cursor-pointer flex flex-col items-center">
                 <Image
@@ -92,14 +95,14 @@ export default function Home() {
                 <PopoverContent>+1 646-925-0205</PopoverContent>
               </Popover>
             </div>
-            <section className="mx-auto my-4 rounded-lg overflow-hidden bg-gray-100 ">
+            <section className="mx-auto my-3 rounded-lg overflow-hidden bg-gray-100 ">
               <Image
                 src="/location.png"
                 alt="Location"
                 width="400"
                 height="400"
               />
-              <article className="p-4 flex flex-col">
+              <article className="p-3 flex flex-col">
                 <h2 className="text-xl font-semibold">New York, NY</h2>
                 <small className="text-gray-500">Manhattan</small>
               </article>
