@@ -5,6 +5,7 @@ import Projects from "./Projects";
 import { useRouter } from "next/navigation";
 
 import React, { useState } from "react";
+import Skills from "./Skills";
 
 const GetReceivedMessage = (type, updateChats) => {
   const { push } = useRouter();
@@ -26,7 +27,7 @@ const GetReceivedMessage = (type, updateChats) => {
       message = (
         <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-fit">
           <p>
-            Hey, I am Ray as mentioned earlier, I was born and raised in
+            👋 Hey, I am Ray as mentioned earlier, I was born and raised in
             Manhattan NY, and I&apos;ve have been{" "}
             <strong>coding for a little over a year</strong>. Outside of my
             work, I am currently attending school at the Manhattan Early College
@@ -61,7 +62,18 @@ const GetReceivedMessage = (type, updateChats) => {
       message = (
         <>
           <Projects />
-          <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-fit">
+          <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-full">
+            <Cta type={type} updateChats={updateChats} push={push} />
+          </article>
+        </>
+      );
+      break;
+    case "Skills":
+      message = (
+        <>
+          <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl">
+            <h3 className="font-bold">Technical skills:</h3>
+            <Skills />
             <Cta type={type} updateChats={updateChats} push={push} />
           </article>
         </>
@@ -69,7 +81,7 @@ const GetReceivedMessage = (type, updateChats) => {
       break;
     default: {
       message = (
-        <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-fit">
+        <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-full">
           <p>Unable to handle your request, Please try again!</p>
           <Cta type={type} updateChats={updateChats} push={push} />
         </article>

@@ -2,7 +2,7 @@ import { v4 } from "uuid";
 
 import React from "react";
 
-export default function Cta({ type, updateChats, push}) {
+export default function Cta({ type, updateChats, push }) {
   const id = v4();
   const handleChange = (e) => {
     updateChats((prev) => {
@@ -15,14 +15,14 @@ export default function Cta({ type, updateChats, push}) {
     push("#latestMessage");
   };
   const options = [
-    { optionValue: "About", optionLabel: "About Ray Chu" },
-    { optionValue: "Projects", optionLabel: "See live projects" },
+    { optionValue: "About", optionLabel: "More about Ray Chu" },
+    { optionValue: "Projects", optionLabel: "See all projects" },
     { optionValue: "Skills", optionLabel: "See all skills" },
   ];
   return (
     <section className={type !== "Projects" && "mt-2"}>
-      <p className="font-medium">
-        Anything {type !== "Welcome" && "else "} I can assist you with?
+      <p className="font-semibold">
+        How {type !== "Welcome" && "else"} may I assist you?
       </p>
       {options
         .filter((option) => option.optionValue !== type)

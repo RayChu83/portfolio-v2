@@ -11,7 +11,7 @@ export default function Projects() {
       description:
         "JobReach is an online platform where you can discover 100+ different jobs, filter and apply to positions based on your specific requirements, showcase your most recent work experiences & more.",
       host: "jobreach.vercel.app",
-      stack: ["React", "Nextjs", "NextAuth", "Tailwind CSS", "MongoDB"],
+      stack: ["ReactJS", "NextJS", "NextAuth", "Tailwind CSS", "MongoDB"],
     },
     {
       title: "Connect Me",
@@ -19,7 +19,7 @@ export default function Projects() {
       description:
         "Connect Me is an interactive online network allowing users to create posts, customize profiles, follow your favorite creators & more.",
       host: "app-connectme.netlify.app",
-      stack: ["React", "React Router", "Firebase", "Redux"],
+      stack: ["ReactJS", "React Router", "Firebase", "Redux"],
     },
   ];
   return (
@@ -32,7 +32,7 @@ export default function Projects() {
           <Link
             href={`https://${project.host}`}
             target="_blank"
-            className="flex items-center justify-between gap-3"
+            className="flex items-center justify-between gap-5"
             title={project.host}
           >
             <div className="col-span-8">

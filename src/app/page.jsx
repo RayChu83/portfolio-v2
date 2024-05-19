@@ -37,7 +37,7 @@ export default function Home() {
             </div>
           </DrawerTrigger>
           <DrawerContent className="min-h-[80%] h-fit p-3 outline-none">
-            <div className="cursor-pointer flex flex-col items-center my-3">
+            <div className="flex flex-col items-center my-3">
               <Image
                 src={`/ray.jpg`}
                 alt="Ray Chu"
