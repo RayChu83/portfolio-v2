@@ -32,10 +32,10 @@ export default function Projects() {
           <Link
             href={`https://${project.host}`}
             target="_blank"
-            className="flex items-center justify-between gap-5"
+            className="gap-[10px] flex items-center justify-between"
             title={project.host}
           >
-            <div className="col-span-8">
+            <div>
               <h3 className="font-bold">{project.title}</h3>
               {project.stack.map((stackItem) => (
                 <Badge key={stackItem} variant="white" className="mr-1">
@@ -43,15 +43,13 @@ export default function Projects() {
                 </Badge>
               ))}
             </div>
-            <div className="col-span-2">
-              <Image
-                src={project.imageSrc}
-                alt={project.description}
-                height={50}
-                width={50}
-                className="bg-white p-1 rounded-lg"
-              />
-            </div>
+            <Image
+              src={project.imageSrc}
+              alt={project.description}
+              height={50}
+              width={50}
+              className="bg-white p-1 rounded-lg"
+            />
           </Link>
           <p className="text-sm text-gray-500">{project.description}</p>
         </article>

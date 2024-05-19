@@ -111,7 +111,7 @@ export default function Chats() {
             <p>{chat.message}</p>
           </article>
         ) : (
-          <span key={chat} className="self-start max-w-xl">
+          <span key={chat} className="self-start max-w-xl w-[80%]">
             {GetReceivedMessage(chat.type, setChats)}
           </span>
         )

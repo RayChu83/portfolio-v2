@@ -35,7 +35,7 @@ export default function Skills() {
   ];
   return skills.map((skill) => (
     <article
-      className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-fit flex justify-between items-center gap-3"
+      className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-full flex justify-between items-center gap-3"
       key={skill}
     >
       <div>
