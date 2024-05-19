@@ -1,30 +1,34 @@
-import Image from "next/image";
+import { FaHtml5 } from "react-icons/fa";
+import { FaCss3Alt } from "react-icons/fa";
+import { RiJavascriptFill } from "react-icons/ri";
+import { FaReact } from "react-icons/fa";
+import { RiNextjsFill } from "react-icons/ri";
+import { IoLogoFirebase } from "react-icons/io5";
+import { SiMongodb } from "react-icons/si";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { FaGithub } from "react-icons/fa";
+
 import React from "react";
 
 export default function Skills() {
   const skills = [
-    { name: "html", src: "/assets/html.png" },
-    { name: "css", src: "/assets/css.png" },
-    { name: "javascript", src: "/assets/javascript.png" },
-    { name: "reactjs", src: "/assets/reactjs.png" },
-    { name: "nextjs", src: "/assets/nextjs.png" },
-    { name: "firebase", src: "/assets/firebase.png" },
-    { name: "mongodb", src: "/assets/mongodb.png" },
-    { name: "tailwind", src: "/assets/tailwind.png" },
-    { name: "github", src: "/assets/github.png" },
+    { name: "HTML", icon: FaHtml5 },
+    { name: "CSS", icon: FaCss3Alt },
+    { name: "Javascript", icon: RiJavascriptFill },
+    { name: "ReactJS", icon: FaReact },
+    { name: "NextJS", icon: RiNextjsFill },
+    { name: "Firebase", icon: IoLogoFirebase },
+    { name: "MongoDB", icon: SiMongodb },
+    { name: "Tailwind CSS", icon: RiTailwindCssFill },
+    { name: "GitHub", icon: FaGithub },
   ];
-  return (
-    <section className="flex flex-wrap gap-3">
-      {skills.map((skill) => (
-        <Image
-          key={skill.name}
-          src={skill.src}
-          title={skill.name}
-          alt={skill.name}
-          height={90}
-          width={90}
-        />
-      ))}
-    </section>
-  );
+  return skills.map((skill) => (
+    <article
+      className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-fit flex justify-between items-center gap-3"
+      key={skill}
+    >
+      <h3 className="font-medium text-sm">{skill.name}</h3>
+      <skill.icon className="text-3xl"/>
+    </article>
+  ));
 }

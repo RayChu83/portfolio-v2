@@ -20,7 +20,7 @@ export default function Cta({ type, updateChats, push }) {
     { optionValue: "Skills", optionLabel: "See all skills" },
   ];
   return (
-    <section className={type !== "Projects" && "mt-2"}>
+    <section className="p-3">
       <p className="font-semibold">
         How {type !== "Welcome" && "else"} may I assist you?
       </p>

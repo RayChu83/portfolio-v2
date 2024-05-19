@@ -62,7 +62,7 @@ const GetReceivedMessage = (type, updateChats) => {
       message = (
         <>
           <Projects />
-          <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-full">
+          <article className="bg-gray-100 text-black rounded-bl-none rounded-xl w-full">
             <Cta type={type} updateChats={updateChats} push={push} />
           </article>
         </>
@@ -71,9 +71,14 @@ const GetReceivedMessage = (type, updateChats) => {
     case "Skills":
       message = (
         <>
-          <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl">
-            <h3 className="font-bold">Technical skills:</h3>
+          <span className="space-y-2">
             <Skills />
+          </span>
+          <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-full mt-2">
+            <h3>
+              💪 Above are all the technical skills I&apos;ve acquired
+              throughout my coding journey.
+            </h3>
             <Cta type={type} updateChats={updateChats} push={push} />
           </article>
         </>
@@ -96,7 +101,7 @@ export default function Chats() {
     { direction: "received", type: "Welcome" },
   ]);
   return (
-    <section className="flex flex-col py-3 px-5 gap-3">
+    <section className="flex flex-col py-3 px-5 gap-2">
       {chats.map((chat) =>
         chat.direction === "sent" ? (
           <article
