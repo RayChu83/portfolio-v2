@@ -1,8 +1,4 @@
-import {
-  Drawer,
-  DrawerContent,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import {
   Popover,
   PopoverContent,
@@ -105,6 +101,7 @@ export default function Home() {
       <main className="mt-28 max-w-5xl m-auto">
         <Chats />
       </main>
+      <footer id="latestMessage"></footer>
     </>
   );
 }

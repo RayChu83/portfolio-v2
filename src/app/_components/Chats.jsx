@@ -1,27 +1,30 @@
 "use client";
 import Link from "next/link";
+import Cta from "./Cta";
+import Projects from "./Projects";
+import { useRouter } from "next/navigation";
 
 import React, { useState } from "react";
-import Cta from "./Cta";
 
-const getReceivedMessage = (type, updateChats) => {
+const GetReceivedMessage = (type, updateChats) => {
+  const { push } = useRouter();
   let message;
   switch (type) {
     case "Welcome":
       message = (
-        <>
+        <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-fit">
           <p>
             👋 Welcome, my name is Ray, and I am an aspiring{" "}
             <strong>Front End Developer </strong>
             passionate about creating stunning web applications.
           </p>
-          <Cta type={type} updateChats={updateChats} />
-        </>
+          <Cta type={type} updateChats={updateChats} push={push} />
+        </article>
       );
       break;
     case "About":
       message = (
-        <>
+        <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-fit">
           <p>
             Hey, I am Ray as mentioned earlier, I was born and raised in
             Manhattan NY, and I&apos;ve have been{" "}
@@ -50,15 +53,26 @@ const getReceivedMessage = (type, updateChats) => {
             </Link>
             .
           </p>
-          <Cta type={type} updateChats={updateChats} />
+          <Cta type={type} updateChats={updateChats} push={push} />
+        </article>
+      );
+      break;
+    case "Projects":
+      message = (
+        <>
+          <Projects />
+          <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-fit">
+            <Cta type={type} updateChats={updateChats} push={push} />
+          </article>
         </>
       );
       break;
     default: {
       message = (
-        <>
+        <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-fit">
           <p>Unable to handle your request, Please try again!</p>
-        </>
+          <Cta type={type} updateChats={updateChats} push={push} />
+        </article>
       );
     }
   }
@@ -71,25 +85,20 @@ export default function Chats() {
   ]);
   return (
     <section className="flex flex-col py-3 px-5 gap-3">
-      {chats.map((chat) => (
-        <article
-          key={chat}
-          className={`
-            ${
-              chat.direction === "received"
-                ? "bg-gray-100 text-black rounded-bl-none self-start"
-                : "bg-[--primary-color] text-white rounded-br-none self-end"
-            }
-            p-3 rounded-xl max-w-xl
-          `}
-        >
-          {chat.direction === "sent" ? (
+      {chats.map((chat) =>
+        chat.direction === "sent" ? (
+          <article
+            key={chat}
+            className={`bg-[--primary-color] text-white rounded-br-none self-end p-3 rounded-xl max-w-xl`}
+          >
             <p>{chat.message}</p>
-          ) : (
-            getReceivedMessage(chat.type, setChats)
-          )}
-        </article>
-      ))}
+          </article>
+        ) : (
+          <span key={chat} className="self-start max-w-xl">
+            {GetReceivedMessage(chat.type, setChats)}
+          </span>
+        )
+      )}
     </section>
   );
 }

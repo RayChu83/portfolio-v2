@@ -1,26 +1,28 @@
-import React from "react";
 import { v4 } from "uuid";
 
-export default function Cta({ type, updateChats }) {
+import React from "react";
+
+export default function Cta({ type, updateChats, push}) {
   const id = v4();
   const handleChange = (e) => {
-    updateChats((prev) => [
-      ...prev,
-      { direction: "sent", message: e.target.value },
-      { direction: "received", type: e.target.value },
-    ]);
+    updateChats((prev) => {
+      return [
+        ...prev,
+        { direction: "sent", message: e.target.value },
+        { direction: "received", type: e.target.value },
+      ];
+    });
+    push("#latestMessage");
   };
   const options = [
-    { optionValue: "About", optionLabel: "Getting to know Ray Chu" },
+    { optionValue: "About", optionLabel: "About Ray Chu" },
     { optionValue: "Projects", optionLabel: "See live projects" },
     { optionValue: "Skills", optionLabel: "See all skills" },
   ];
   return (
-    <section className="mt-2">
-      <p>
-        {type === "Welcome"
-          ? "What can I help you with?"
-          : "Anything else I can help with?"}
+    <section className={type !== "Projects" && "mt-2"}>
+      <p className="font-medium">
+        Anything {type !== "Welcome" && "else "} I can assist you with?
       </p>
       {options
         .filter((option) => option.optionValue !== type)
@@ -36,7 +38,7 @@ export default function Cta({ type, updateChats }) {
             />
             <label
               htmlFor={`${option.optionValue}-${id}`}
-              className="cursor-pointer"
+              className="cursor-pointer text-[15px]"
             >
               {option.optionLabel}
             </label>
