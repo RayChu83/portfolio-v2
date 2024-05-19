@@ -53,7 +53,7 @@ export default function Projects() {
               />
             </div>
           </Link>
-          <p className="text-sm">{project.description}</p>
+          <p className="text-sm text-gray-500">{project.description}</p>
         </article>
       ))}
     </section>

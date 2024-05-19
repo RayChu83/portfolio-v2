@@ -12,23 +12,38 @@ import React from "react";
 
 export default function Skills() {
   const skills = [
-    { name: "HTML", icon: FaHtml5 },
-    { name: "CSS", icon: FaCss3Alt },
-    { name: "Javascript", icon: RiJavascriptFill },
-    { name: "ReactJS", icon: FaReact },
-    { name: "NextJS", icon: RiNextjsFill },
-    { name: "Firebase", icon: IoLogoFirebase },
-    { name: "MongoDB", icon: SiMongodb },
-    { name: "Tailwind CSS", icon: RiTailwindCssFill },
-    { name: "GitHub", icon: FaGithub },
+    { name: "HTML", icon: FaHtml5, description: "HyperText Markup Language" },
+    { name: "CSS", icon: FaCss3Alt, description: "Cascading Style Sheets" },
+    {
+      name: "Javascript",
+      icon: RiJavascriptFill,
+      description: "Programming language",
+    },
+    { name: "ReactJS", icon: FaReact, description: "JavaScript library" },
+    { name: "NextJS", icon: RiNextjsFill, description: "React framework" },
+    {
+      name: "Firebase",
+      icon: IoLogoFirebase,
+      description: "Backend as a service",
+    },
+    { name: "MongoDB", icon: SiMongodb, description: "NoSQL database" },
+    {
+      name: "Tailwind CSS",
+      icon: RiTailwindCssFill,
+      description: "CSS Framework",
+    },
+    { name: "GitHub", icon: FaGithub, description: "Code hosting platform" },
   ];
   return skills.map((skill) => (
     <article
       className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-fit flex justify-between items-center gap-3"
       key={skill}
     >
-      <h3 className="font-medium text-sm">{skill.name}</h3>
-      <skill.icon className="text-3xl"/>
+      <div>
+        <h3 className="font-medium text-sm">{skill.name}</h3>
+        <small className="text-gray-500">{skill?.description}</small>
+      </div>
+      <skill.icon className="text-4xl" />
     </article>
   ));
 }
