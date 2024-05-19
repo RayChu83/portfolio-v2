@@ -4,7 +4,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { MdKeyboardArrowLeft } from "react-icons/md";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import { FaFilePdf } from "react-icons/fa6";
@@ -33,7 +33,9 @@ export default function Home() {
                 width="50"
                 height="50"
               />
-              <h3 className="font-medium">Ray Chu</h3>
+              <h3 className="font-medium flex items-center">
+                Ray Chu <MdKeyboardArrowRight />
+              </h3>
             </div>
           </DrawerTrigger>
           <DrawerContent className="min-h-[80%] h-fit p-3 outline-none">
@@ -46,6 +48,7 @@ export default function Home() {
                 height="100"
               />
               <h3 className="font-semibold text-2xl">Ray Chu</h3>
+              <h4 className="font-medium text-sm text-gray-500">Front End Developer</h4>
             </div>
             <div className="grid md:grid-cols-4 grid-cols-2 gap-3 mx-auto max-w-[400px] w-[100%]">
               <Link

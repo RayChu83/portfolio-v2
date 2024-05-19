@@ -1,12 +1,11 @@
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { RiJavascriptFill } from "react-icons/ri";
-import { FaReact } from "react-icons/fa";
-import { RiNextjsFill } from "react-icons/ri";
+import { FaHtml5, FaCss3Alt, FaReact, FaGithub } from "react-icons/fa";
+import {
+  RiJavascriptFill,
+  RiNextjsFill,
+  RiTailwindCssFill,
+} from "react-icons/ri";
 import { IoLogoFirebase } from "react-icons/io5";
 import { SiMongodb } from "react-icons/si";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { FaGithub } from "react-icons/fa";
 
 import React from "react";
 
