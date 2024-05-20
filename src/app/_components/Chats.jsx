@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
-import Cta from "./Cta";
-import Projects from "./Projects";
+import Cta from "@/app/_components/Cta";
+import Projects from "@/app/_components/Projects";
 import { useRouter } from "next/navigation";
-import Skills from "./Skills";
+import Skills from "@/app/_components/Skills";
 import Image from "next/image";
+import DrawerOpen from "./DrawerOpen";
 
 import React, { useState } from "react";
 
@@ -116,13 +117,15 @@ export default function Chats() {
             key={chat}
             className="self-start max-w-xl w-[80%] flex items-end gap-1"
           >
-            <Image
-              src="/ray.jpg"
-              alt="Ray Chu"
-              height="25"
-              width="25"
-              className="rounded-full"
-            />
+            <DrawerOpen className="flex-shrink-0 w-[50px] h-[50px] flex items-center justify-center">
+              <Image
+                src="/ray.jpg"
+                alt="Ray Chu"
+                height={25}
+                width={25}
+                className="rounded-full cursor-pointer"
+              />
+            </DrawerOpen>
             <span>{GetReceivedMessage(chat.type, setChats)}</span>
           </span>
         )
