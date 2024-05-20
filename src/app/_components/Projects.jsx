@@ -27,7 +27,7 @@ export default function Projects() {
       {projects.map((project) => (
         <article
           key={project}
-          className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-fit"
+          className="bg-gray-100 text-black  p-3 rounded-xl w-fit"
         >
           <Link
             href={`https://${project.host}`}

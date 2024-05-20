@@ -3,9 +3,10 @@ import Link from "next/link";
 import Cta from "./Cta";
 import Projects from "./Projects";
 import { useRouter } from "next/navigation";
+import Skills from "./Skills";
+import Image from "next/image";
 
 import React, { useState } from "react";
-import Skills from "./Skills";
 
 const GetReceivedMessage = (type, updateChats) => {
   const { push } = useRouter();
@@ -13,7 +14,7 @@ const GetReceivedMessage = (type, updateChats) => {
   switch (type) {
     case "Welcome":
       message = (
-        <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-fit">
+        <article className="bg-gray-100 text-black p-3 rounded-xl w-fit">
           <p>
             👋 Welcome, my name is Ray, and I am an aspiring{" "}
             <strong>Front End Developer </strong>
@@ -25,7 +26,7 @@ const GetReceivedMessage = (type, updateChats) => {
       break;
     case "About":
       message = (
-        <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-fit">
+        <article className="bg-gray-100 text-black p-3 rounded-xl w-fit">
           <p>
             👋 Hey, I am Ray as mentioned earlier, I was born and raised in
             Manhattan NY, and I&apos;ve have been{" "}
@@ -62,7 +63,7 @@ const GetReceivedMessage = (type, updateChats) => {
       message = (
         <>
           <Projects />
-          <article className="bg-gray-100 text-black rounded-bl-none rounded-xl w-full">
+          <article className="bg-gray-100 text-black rounded-xl w-full">
             <Cta type={type} updateChats={updateChats} push={push} />
           </article>
         </>
@@ -74,10 +75,10 @@ const GetReceivedMessage = (type, updateChats) => {
           <span className="space-y-2">
             <Skills />
           </span>
-          <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-full mt-2">
+          <article className="bg-gray-100 text-black p-3 rounded-xl w-full mt-2">
             <h3>
-              💪 Above are all the technical skills I&apos;ve acquired
-              throughout my coding journey.
+              💪 Above are all the technical skills I&apos;ve learned throughout
+              software development journey.
             </h3>
             <Cta type={type} updateChats={updateChats} push={push} />
           </article>
@@ -86,7 +87,7 @@ const GetReceivedMessage = (type, updateChats) => {
       break;
     default: {
       message = (
-        <article className="bg-gray-100 text-black rounded-bl-none p-3 rounded-xl w-full">
+        <article className="bg-gray-100 text-black p-3 rounded-xl w-full">
           <p>Unable to handle your request, Please try again!</p>
           <Cta type={type} updateChats={updateChats} push={push} />
         </article>
@@ -106,13 +107,23 @@ export default function Chats() {
         chat.direction === "sent" ? (
           <article
             key={chat}
-            className={`bg-[--primary-color] text-white rounded-br-none self-end p-3 rounded-xl max-w-xl`}
+            className="bg-[--primary-color] text-white self-end p-3 rounded-xl max-w-xl"
           >
             <p>{chat.message}</p>
           </article>
         ) : (
-          <span key={chat} className="self-start max-w-xl w-[80%]">
-            {GetReceivedMessage(chat.type, setChats)}
+          <span
+            key={chat}
+            className="self-start max-w-xl w-[80%] flex items-end gap-1"
+          >
+            <Image
+              src="/ray.jpg"
+              alt="Ray Chu"
+              height="25"
+              width="25"
+              className="rounded-full"
+            />
+            <span>{GetReceivedMessage(chat.type, setChats)}</span>
           </span>
         )
       )}

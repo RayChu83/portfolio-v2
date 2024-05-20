@@ -13,6 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Chats from "@/app/_components/Chats";
 
+
 import React from "react";
 
 export default function Home() {
@@ -21,7 +22,7 @@ export default function Home() {
       <nav className="py-3 px-5 bg-gray-100 flex justify-center fixed w-full top-0 border-b border-gray-200 drop-shadow-sm z-50">
         <div className="flex items-center text-lg text-[--primary-color] cursor-pointer absolute left-5 top-[39px] font-medium">
           <MdKeyboardArrowLeft className="text-3xl" />
-          <span className="sm:block hidden">Go Back</span>
+          <span className="sm:block hidden text-base">Go Back</span>
         </div>
         <Drawer>
           <DrawerTrigger>
@@ -48,7 +49,9 @@ export default function Home() {
                 height="100"
               />
               <h3 className="font-semibold text-2xl">Ray Chu</h3>
-              <h4 className="font-medium text-sm text-gray-500">Front End Developer</h4>
+              <h4 className="font-medium text-sm text-gray-500">
+                Front End Developer
+              </h4>
             </div>
             <div className="grid md:grid-cols-4 grid-cols-2 gap-3 mx-auto max-w-[400px] w-[100%]">
               <Link
