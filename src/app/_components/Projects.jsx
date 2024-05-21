@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -12,6 +13,7 @@ export default function Projects() {
         "JobReach is an online platform where you can discover 100+ different jobs, filter and apply to positions based on your specific requirements, showcase your most recent work experiences & more.",
       host: "jobreach.vercel.app",
       stack: ["ReactJS", "NextJS", "NextAuth", "Tailwind CSS", "MongoDB"],
+      sourceCode: "https://github.com/RayChu83/JobReach",
     },
     {
       title: "Connect Me",
@@ -20,6 +22,7 @@ export default function Projects() {
         "Connect Me is an interactive online network allowing users to create posts, customize profiles, follow your favorite creators & more.",
       host: "app-connectme.netlify.app",
       stack: ["ReactJS", "React Router", "Firebase", "Redux"],
+      sourceCode: "https://github.com/RayChu83/ConnectMe",
     },
   ];
   return (
@@ -37,9 +40,14 @@ export default function Projects() {
           >
             <div>
               <h3 className="font-bold">{project.title}</h3>
-              {project.stack.map((stackItem) => (
-                <Badge key={stackItem} variant="white" className="mr-1">
-                  {stackItem}
+              {project.stack.map((technology) => (
+                <Badge
+                  key={technology}
+                  variant="white"
+                  className="mr-1"
+                  title={technology}
+                >
+                  {technology}
                 </Badge>
               ))}
             </div>
@@ -51,7 +59,14 @@ export default function Projects() {
               className="bg-white p-1 rounded-lg"
             />
           </Link>
-          <p className="text-sm text-gray-500">{project.description}</p>
+          <p className="text-sm text-gray-500 mb-1">{project.description}</p>
+          <div className="flex justify-end">
+            <Button size="xs" variant="link" asChild>
+              <Link href={project.sourceCode} target="_blank">
+                Source Code
+              </Link>
+            </Button>
+          </div>
         </article>
       ))}
     </section>
