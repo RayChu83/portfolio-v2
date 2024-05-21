@@ -1,11 +1,10 @@
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
-import Chats from "@/app/_components/Chats";
 import DrawerOpen from "@/app/_components/DrawerOpen";
 
 import React from "react";
 
-export default function Home() {
+export default function RayChuLayout({ children }) {
   return (
     <>
       <nav className="py-3 px-5 bg-gray-100 flex justify-center fixed w-full top-0 border-b border-gray-200 drop-shadow-sm z-50">
@@ -28,10 +27,7 @@ export default function Home() {
           </div>
         </DrawerOpen>
       </nav>
-      <main className="mt-28 max-w-5xl m-auto">
-        <Chats />
-      </main>
-      <footer id="latestMessage"></footer>
+      {children}
     </>
   );
 }

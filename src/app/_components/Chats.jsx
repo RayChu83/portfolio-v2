@@ -5,7 +5,8 @@ import Projects from "@/app/_components/Projects";
 import { useRouter } from "next/navigation";
 import Skills from "@/app/_components/Skills";
 import Image from "next/image";
-import DrawerOpen from "./DrawerOpen";
+import DrawerOpen from "@/app/_components/DrawerOpen";
+import Animation from "@/app/_components/Animation";
 
 import React, { useState } from "react";
 
@@ -103,7 +104,7 @@ export default function Chats() {
     { direction: "received", type: "Welcome" },
   ]);
   return (
-    <section className="flex flex-col py-3 px-5 gap-2">
+    <section className="flex flex-col py-3 px-5 gap-3">
       {chats.map((chat) =>
         chat.direction === "sent" ? (
           <article
@@ -113,20 +114,19 @@ export default function Chats() {
             <p>{chat.message}</p>
           </article>
         ) : (
-          <span
-            key={chat}
-            className="self-start max-w-xl w-[80%] flex items-end gap-1"
-          >
-            <DrawerOpen className="flex-shrink-0 w-[50px] h-[50px] flex items-center justify-center">
-              <Image
-                src="/ray.jpg"
-                alt="Ray Chu"
-                height={25}
-                width={25}
-                className="rounded-full cursor-pointer"
-              />
-            </DrawerOpen>
-            <span>{GetReceivedMessage(chat.type, setChats)}</span>
+          <span key={chat} className="self-start max-w-xl w-[95%]">
+            <Animation>
+              <DrawerOpen className="flex-shrink-0 w-[50px] h-[50px] flex items-center justify-center">
+                <Image
+                  src="/ray.jpg"
+                  alt="Ray Chu"
+                  height={25}
+                  width={25}
+                  className="rounded-full cursor-pointer bg-gray-500"
+                />
+              </DrawerOpen>
+              <span>{GetReceivedMessage(chat.type, setChats)}</span>
+            </Animation>
           </span>
         )
       )}
