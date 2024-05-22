@@ -1,8 +1,10 @@
 import { v4 } from "uuid";
+import { getPortfolio } from "@/utils";
 
 import React from "react";
 
 export default function Cta({ type, updateChats, push }) {
+  const { options } = getPortfolio();
   const id = v4();
   const handleChange = (e) => {
     updateChats((prev) => {
@@ -14,11 +16,6 @@ export default function Cta({ type, updateChats, push }) {
     });
     push("#latestMessage");
   };
-  const options = [
-    { optionValue: "About", optionLabel: "More about Ray Chu" },
-    { optionValue: "Projects", optionLabel: "See all projects" },
-    { optionValue: "Skills", optionLabel: "See all skills" },
-  ];
   return (
     <section className="p-3">
       <p className="font-semibold">

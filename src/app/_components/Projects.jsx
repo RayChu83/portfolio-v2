@@ -1,30 +1,13 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { getPortfolio } from "@/utils";
 import Image from "next/image";
 import Link from "next/link";
+
 import React from "react";
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "JobReach",
-      imageSrc: "/jobreach.png",
-      description:
-        "JobReach is an online platform where you can discover 100+ different jobs, filter and apply to positions based on your specific requirements, showcase your most recent work experiences & more.",
-      host: "jobreach.vercel.app",
-      stack: ["ReactJS", "NextJS", "NextAuth", "Tailwind CSS", "MongoDB"],
-      sourceCode: "https://github.com/RayChu83/JobReach",
-    },
-    {
-      title: "Connect Me",
-      imageSrc: "/connectme.png",
-      description:
-        "Connect Me is an interactive online network allowing users to create posts, customize profiles, follow your favorite creators & more.",
-      host: "app-connectme.netlify.app",
-      stack: ["ReactJS", "React Router", "Firebase", "Redux"],
-      sourceCode: "https://github.com/RayChu83/ConnectMe",
-    },
-  ];
+  const { projects } = getPortfolio();
   return (
     <section className="flex flex-col gap-3 mb-3">
       {projects.map((project) => (

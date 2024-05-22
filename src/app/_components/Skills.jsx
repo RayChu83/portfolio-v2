@@ -1,38 +1,9 @@
-import { FaHtml5, FaCss3Alt, FaReact, FaGithub } from "react-icons/fa";
-import {
-  RiJavascriptFill,
-  RiNextjsFill,
-  RiTailwindCssFill,
-} from "react-icons/ri";
-import { IoLogoFirebase } from "react-icons/io5";
-import { SiMongodb } from "react-icons/si";
+import { getPortfolio } from "@/utils";
 
 import React from "react";
 
 export default function Skills() {
-  const skills = [
-    { name: "HTML", icon: FaHtml5, description: "HyperText Markup Language" },
-    { name: "CSS", icon: FaCss3Alt, description: "Cascading Style Sheets" },
-    {
-      name: "Javascript",
-      icon: RiJavascriptFill,
-      description: "Programming language",
-    },
-    { name: "ReactJS", icon: FaReact, description: "JavaScript library" },
-    { name: "NextJS", icon: RiNextjsFill, description: "React framework" },
-    {
-      name: "Firebase",
-      icon: IoLogoFirebase,
-      description: "Backend as a service",
-    },
-    { name: "MongoDB", icon: SiMongodb, description: "NoSQL database" },
-    {
-      name: "Tailwind CSS",
-      icon: RiTailwindCssFill,
-      description: "CSS Framework",
-    },
-    { name: "GitHub", icon: FaGithub, description: "Code hosting platform" },
-  ];
+  const { skills } = getPortfolio();
   return skills.map((skill) => (
     <article
       className="bg-gray-100 text-black  p-3 rounded-xl w-fit flex justify-between items-center gap-3"
