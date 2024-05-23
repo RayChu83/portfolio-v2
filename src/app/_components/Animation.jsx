@@ -10,7 +10,7 @@ export default function Animation({ children }) {
       }}
       initial="hidden"
       animate="visible"
-      transition={{ duration: 0.3, delay: 0.3 }}
+      transition={{ duration: 0.3, delay: 0.15 }}
       className="flex items-end gap-1"
     >
       {children}
