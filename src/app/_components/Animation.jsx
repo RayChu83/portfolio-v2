@@ -5,7 +5,7 @@ export default function Animation({ children }) {
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 55 },
+        hidden: { opacity: 0, y: -35 },
         visible: { opacity: 1, y: 0 },
       }}
       initial="hidden"

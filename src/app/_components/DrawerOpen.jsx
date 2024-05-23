@@ -1,4 +1,3 @@
-"use client";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import {
   Popover,
@@ -13,17 +12,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { getPortfolio } from "@/utils";
 
-import React, { useState } from "react";
-import useScrollBehavior from "../hooks/use-scroll-behavior";
+import React from "react";
 
 export default function DrawerOpen({ children }) {
-  const [open, setOpen] = useState(false);
-  useScrollBehavior(open);
-
   const portfolio = getPortfolio();
   return (
-    <Drawer open={open} onOpenChange={setOpen}>
-      {/* <Drawer> */}
+    <Drawer>
       <DrawerTrigger asChild>{children}</DrawerTrigger>
       <DrawerContent className="min-h-[80%] h-fit p-3 outline-none">
         <div className="flex flex-col items-center my-3">

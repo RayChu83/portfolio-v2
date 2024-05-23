@@ -19,8 +19,6 @@ const DrawerPortal = DrawerPrimitive.Portal;
 
 const DrawerClose = DrawerPrimitive.Close;
 
-console.log(DrawerClose);
-
 const DrawerOverlay = React.forwardRef(({ className, ...props }, ref) => (
   <DrawerPrimitive.Overlay
     ref={ref}
