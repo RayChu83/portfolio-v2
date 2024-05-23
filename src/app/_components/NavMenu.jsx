@@ -19,7 +19,9 @@ export default function NavMenu() {
           onClick={() => setBarOpened((prev) => !prev)}
         >
           <MdKeyboardArrowLeft className="text-3xl" />
-          <span className="sm:block hidden text-base">Go Back</span>
+          <span className="sm:block hidden text-base">
+            {barOpened ? "Hide" : "Go Back"}
+          </span>
         </div>
         <DrawerOpen>
           <div
