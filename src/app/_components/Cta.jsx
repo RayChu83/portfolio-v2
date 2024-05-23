@@ -14,7 +14,6 @@ export default function Cta({ type, updateChats, push }) {
         { direction: "received", type: e.target.value },
       ];
     });
-    push("#latestMessage");
   };
   return (
     <section className="p-3">

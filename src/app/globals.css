@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth !important;
   box-sizing: border-box;
 }
 

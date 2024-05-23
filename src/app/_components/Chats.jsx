@@ -9,7 +9,7 @@ import DrawerOpen from "@/app/_components/DrawerOpen";
 import Animation from "@/app/_components/Animation";
 import { getPortfolio } from "@/utils";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const GetReceivedMessage = (type, updateChats, portfolio) => {
   const { push } = useRouter();
@@ -101,38 +101,49 @@ const GetReceivedMessage = (type, updateChats, portfolio) => {
 };
 
 export default function Chats() {
+  const latestMessageRef = useRef(null);
   const portfolio = getPortfolio();
   const [chats, setChats] = useState([
     { direction: "received", type: "Welcome" },
   ]);
+  useEffect(() => {
+    if (latestMessageRef.current) {
+      latestMessageRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [chats]);
   return (
-    <section className="flex flex-col py-3 px-5 gap-3">
-      {chats.map((chat) =>
-        chat.direction === "sent" ? (
-          <article
-            key={chat}
-            className="bg-[--primary-color] text-white self-end p-3 rounded-xl max-w-xl"
-          >
-            <p>{chat.message}</p>
-          </article>
-        ) : (
-          <span key={chat} className="self-start max-w-xl w-[95%]">
-            <Animation>
-              <DrawerOpen className="flex-shrink-0 w-[50px] h-[50px] flex items-center justify-center">
-                <Image
-                  src={portfolio.imageSrc}
-                  alt={portfolio.name}
-                  height={25}
-                  width={25}
-                  className="rounded-full cursor-pointer bg-gray-500"
-                  title={portfolio.name}
-                />
-              </DrawerOpen>
-              <span>{GetReceivedMessage(chat.type, setChats, portfolio)}</span>
-            </Animation>
-          </span>
-        )
-      )}
-    </section>
+    <>
+      <section className="flex flex-col py-3 px-5 gap-3">
+        {chats.map((chat) =>
+          chat.direction === "sent" ? (
+            <article
+              key={chat}
+              className="bg-[--primary-color] text-white self-end p-3 rounded-xl max-w-xl"
+            >
+              <p>{chat.message}</p>
+            </article>
+          ) : (
+            <span key={chat} className="self-start max-w-xl w-[95%]">
+              <Animation>
+                <DrawerOpen className="flex-shrink-0 w-[50px] h-[50px] flex items-center justify-center">
+                  <Image
+                    src={portfolio.imageSrc}
+                    alt={portfolio.name}
+                    height={25}
+                    width={25}
+                    className="rounded-full cursor-pointer bg-gray-500"
+                    title={portfolio.name}
+                  />
+                </DrawerOpen>
+                <span>
+                  {GetReceivedMessage(chat.type, setChats, portfolio)}
+                </span>
+              </Animation>
+            </span>
+          )
+        )}
+      </section>
+      <footer ref={latestMessageRef} />
+    </>
   );
 }
