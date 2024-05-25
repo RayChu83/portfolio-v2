@@ -12,7 +12,6 @@ import { getPortfolio } from "@/utils";
 import React, { useEffect, useRef, useState } from "react";
 
 const GetReceivedMessage = (type, updateChats, portfolio) => {
-  const { push } = useRouter();
   let message;
   switch (type) {
     case "Welcome":
@@ -23,7 +22,7 @@ const GetReceivedMessage = (type, updateChats, portfolio) => {
             aspiring <strong>{portfolio.role} </strong>
             passionate about creating stunning web applications.
           </p>
-          <Cta type={type} updateChats={updateChats} push={push} />
+          <Cta type={type} updateChats={updateChats} />
         </article>
       );
       break;
@@ -58,7 +57,7 @@ const GetReceivedMessage = (type, updateChats, portfolio) => {
             </Link>
             .
           </p>
-          <Cta type={type} updateChats={updateChats} push={push} />
+          <Cta type={type} updateChats={updateChats} />
         </article>
       );
       break;
@@ -67,7 +66,7 @@ const GetReceivedMessage = (type, updateChats, portfolio) => {
         <>
           <Projects />
           <article className="bg-gray-100 text-black rounded-xl w-full">
-            <Cta type={type} updateChats={updateChats} push={push} />
+            <Cta type={type} updateChats={updateChats} />
           </article>
         </>
       );
@@ -83,7 +82,7 @@ const GetReceivedMessage = (type, updateChats, portfolio) => {
               💪 Above are all the technical skills I&apos;ve learned throughout
               software development journey.
             </h3>
-            <Cta type={type} updateChats={updateChats} push={push} />
+            <Cta type={type} updateChats={updateChats} />
           </article>
         </>
       );
@@ -92,7 +91,7 @@ const GetReceivedMessage = (type, updateChats, portfolio) => {
       message = (
         <article className="bg-gray-100 text-black p-3 rounded-xl w-full">
           <p>Unable to handle your request, Please try again!</p>
-          <Cta type={type} updateChats={updateChats} push={push} />
+          <Cta type={type} updateChats={updateChats} />
         </article>
       );
     }
@@ -114,16 +113,16 @@ export default function Chats() {
   return (
     <>
       <section className="flex flex-col py-3 px-5 gap-3">
-        {chats.map((chat) =>
+        {chats.map((chat, index) =>
           chat.direction === "sent" ? (
             <article
-              key={chat}
+              key={index}
               className="bg-[--primary-color] text-white self-end p-3 rounded-xl max-w-xl"
             >
               <p>{chat.message}</p>
             </article>
           ) : (
-            <span key={chat} className="self-start max-w-xl w-[95%]">
+            <span key={index} className="self-start max-w-xl w-[95%]">
               <Animation>
                 <DrawerOpen className="flex-shrink-0 w-[50px] h-[50px] flex items-center justify-center">
                   <Image

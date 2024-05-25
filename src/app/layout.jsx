@@ -7,6 +7,15 @@ export const metadata = {
   title: "Portfolio - Ray Chu",
   description:
     "Ray Chu is an aspiring Front-End Developer born and raised in Manhattan NY.",
+  keywords: [
+    "Ray Chu",
+    "Software Developer",
+    "Front End Developer",
+    "Computer Science",
+    "Web Developer",
+    "UI Designer",
+    "New York City",
+  ],
 };
 
 export default function RootLayout({ children }) {

@@ -68,7 +68,7 @@ export default function DrawerOpen({ children }) {
             <PopoverContent>{portfolio.phone}</PopoverContent>
           </Popover>
         </div>
-        <section className="mx-auto my-3 rounded-lg overflow-hidden bg-gray-100 ">
+        <section className="mx-auto my-3 rounded-lg overflow-y-hidden bg-gray-100 max-h-[305px]">
           <Image
             src={portfolio.locationSrc}
             alt="Location"
@@ -76,8 +76,8 @@ export default function DrawerOpen({ children }) {
             height="400"
             className="hover:opacity-50 transition-opacity"
           />
-          <article className="p-3 flex flex-col">
-            <h2 className="text-xl font-semibold">{portfolio.state}</h2>
+          <article className="p-3 flex flex-col text-base">
+            <h2 className="font-bold">{portfolio.state}</h2>
             <small className="text-gray-500">{portfolio.borough}</small>
           </article>
         </section>

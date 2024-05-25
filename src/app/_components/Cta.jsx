@@ -3,7 +3,7 @@ import { getPortfolio } from "@/utils";
 
 import React from "react";
 
-export default function Cta({ type, updateChats, push }) {
+export default function Cta({ type, updateChats }) {
   const { options } = getPortfolio();
   const id = v4();
   const handleChange = (e) => {
@@ -23,7 +23,7 @@ export default function Cta({ type, updateChats, push }) {
       {options
         .filter((option) => option.optionValue !== type)
         .map((option) => (
-          <span className="flex items-center gap-2" key={option}>
+          <span className="flex items-center gap-2" key={option.optionValue}>
             <input
               type="radio"
               id={`${option.optionValue}-${id}`}

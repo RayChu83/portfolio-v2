@@ -34,6 +34,7 @@ export default function NavMenu() {
               className="bg-gray-300 rounded-full"
               width="50"
               height="50"
+              priority
             />
             <h3 className="font-medium flex items-center">
               {portfolio.name} <MdKeyboardArrowRight />

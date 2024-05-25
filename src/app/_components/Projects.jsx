@@ -12,7 +12,7 @@ export default function Projects() {
     <section className="flex flex-col gap-3 mb-3">
       {projects.map((project) => (
         <article
-          key={project}
+          key={project.host}
           className="bg-gray-100 text-black  p-3 rounded-xl w-fit"
         >
           <Link
