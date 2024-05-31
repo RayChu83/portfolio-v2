@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Portfolio - Ray Chu",
   description:
-    "Ray Chu is an aspiring Front-End Developer born and raised in Manhattan NY.",
+    "Ray Chu is a Front-End Developer born and raised in Manhattan NY.",
   keywords: [
     "Ray Chu",
     "Software Developer",

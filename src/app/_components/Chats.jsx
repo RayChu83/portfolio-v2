@@ -18,8 +18,8 @@ const GetReceivedMessage = (type, updateChats, portfolio) => {
       message = (
         <article className="bg-gray-100 text-black p-3 rounded-xl w-fit">
           <p>
-            👋 Welcome, my name is {portfolio.name.split(" ")[0]}, and I am an
-            aspiring <strong>{portfolio.role} </strong>
+            👋 Welcome, my name is {portfolio.name.split(" ")[0]}, and I am a
+            <strong> {portfolio.role} </strong>
             passionate about creating stunning web applications.
           </p>
           <Cta type={type} updateChats={updateChats} />
@@ -112,7 +112,7 @@ export default function Chats() {
   }, [chats]);
   return (
     <>
-      <section className="flex flex-col py-3 px-5 gap-3">
+      <section className="flex flex-col p-5 gap-3">
         {chats.map((chat, index) =>
           chat.direction === "sent" ? (
             <article

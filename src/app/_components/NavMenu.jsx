@@ -37,7 +37,7 @@ export default function NavMenu() {
               priority
             />
             <h3 className="font-medium flex items-center">
-              {portfolio.name} <MdKeyboardArrowRight />
+              Contact Me <MdKeyboardArrowRight />
             </h3>
           </div>
         </DrawerOpen>
