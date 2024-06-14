@@ -36,13 +36,19 @@ export default function Projects() {
             </div>
             <Image
               src={project.imageSrc}
-              alt={project.description}
+              alt={project.title}
               height={50}
               width={50}
               className="bg-white p-1 rounded-lg"
             />
           </Link>
-          <p className="text-sm text-gray-500 mb-1">{project.description}</p>
+          <ul className="mb-1">
+            {project.points.map((point, index) => (
+              <li className="text-sm text-gray-500 list-disc ml-5" key={index}>
+                {point}
+              </li>
+            ))}
+          </ul>
           <div className="flex justify-end">
             <Button size="xs" variant="link" asChild>
               <Link href={project.sourceCode} target="_blank">

@@ -23,17 +23,20 @@ export const getPortfolio = () => {
       {
         title: "Advice For All",
         imageSrc: "/adviceforall.png",
-        description:
-          "Advice For All is an application that allows users to either host or participate in specific topic rooms, offering insights and guidance to others anonymously.",
-        host: "adviceforall.org",
+        points: [
+          "Wireframed 12 web design layouts using Figma, then built them into fully functional pages using React",
+          "Integrated a public image API that retrieves images based on room titles, and produced a REST API with 7 unique endpoints, supporting a range of HTTP methods such as GET, POST, and PUT for managing data",
+        ],
         stack: ["ReactJS", "NextJS", "Material UI", "Tailwind CSS", "MongoDB"],
         sourceCode: "https://github.com/RayChu83/adviceforall",
       },
       {
-        title: "JobReach",
+        title: "Job Reach",
         imageSrc: "/jobreach.png",
-        description:
-          "JobReach is an online platform where you can discover 100+ different jobs, filter and apply to positions based on your specific requirements, showcase your most recent work experiences & more.",
+        points: [
+          "Designed 20+ different server/client-side React components, including static, dynamic and reusable components",
+          "Developed a REST API with 9 unique endpoints to interact with a MongoDB database which retrieves and manipulates data",
+        ],
         host: "jobreach.vercel.app",
         stack: ["ReactJS", "NextJS", "NextAuth", "Tailwind CSS", "MongoDB"],
         sourceCode: "https://github.com/RayChu83/JobReach",
@@ -41,8 +44,9 @@ export const getPortfolio = () => {
       {
         title: "Connect Me",
         imageSrc: "/connectme.png",
-        description:
-          "Connect Me is an interactive online network allowing users to create posts, customize profiles, follow your favorite creators & more.",
+        points: [
+          "Constructed upon the existing design and features Twitter/X to create 15+ different React components, each essential parts to the application",
+        ],
         host: "app-connectme.netlify.app",
         stack: ["ReactJS", "React Router", "Firebase", "Redux"],
         sourceCode: "https://github.com/RayChu83/ConnectMe",
