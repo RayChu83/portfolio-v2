@@ -5,7 +5,9 @@ import {
   RiTailwindCssFill,
 } from "react-icons/ri";
 import { IoLogoFirebase } from "react-icons/io5";
-import { SiMongodb } from "react-icons/si";
+import { SiMongodb, SiMui, SiShadcnui } from "react-icons/si";
+import { TbBrandFramerMotion } from "react-icons/tb";
+import { SiGreensock } from "react-icons/si";
 
 export const getPortfolio = () => {
   return {
@@ -27,7 +29,14 @@ export const getPortfolio = () => {
           "Wireframed 12 web design layouts using Figma, then built them into fully functional pages using React",
           "Integrated a public image API that retrieves images based on room titles, and produced a REST API with 7 unique endpoints, supporting a range of HTTP methods such as GET, POST, and PUT for managing data",
         ],
-        stack: ["ReactJS", "NextJS", "Material UI", "Tailwind CSS", "MongoDB"],
+        stack: [
+          "ReactJS",
+          "NextJS",
+          "Material UI",
+          "Tailwind CSS",
+          "Framer Motion",
+          "MongoDB",
+        ],
         sourceCode: "https://github.com/RayChu83/adviceforall",
       },
       {
@@ -38,7 +47,14 @@ export const getPortfolio = () => {
           "Developed a REST API with 9 unique endpoints to interact with a MongoDB database which retrieves and manipulates data",
         ],
         host: "jobreach.vercel.app",
-        stack: ["ReactJS", "NextJS", "NextAuth", "Tailwind CSS", "MongoDB"],
+        stack: [
+          "ReactJS",
+          "NextJS",
+          "NextAuth",
+          "Tailwind CSS",
+          "Framer Motion",
+          "MongoDB",
+        ],
         sourceCode: "https://github.com/RayChu83/JobReach",
       },
       {
@@ -72,6 +88,26 @@ export const getPortfolio = () => {
         name: "Tailwind CSS",
         icon: RiTailwindCssFill,
         description: "CSS Framework",
+      },
+      {
+        name: "Shadcn UI",
+        icon: SiShadcnui,
+        description: "React component collection",
+      },
+      {
+        name: "Material UI",
+        icon: SiMui,
+        description: "React component library",
+      },
+      {
+        name: "Framer Motion",
+        icon: TbBrandFramerMotion,
+        description: "React motion library",
+      },
+      {
+        name: "GSAP",
+        icon: SiGreensock,
+        description: "Javascript animation library",
       },
       { name: "GitHub", icon: FaGithub, description: "Code hosting platform" },
     ],
