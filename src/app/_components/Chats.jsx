@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Cta from "@/app/_components/Cta";
 import Projects from "@/app/_components/Projects";
-import { useRouter } from "next/navigation";
 import Skills from "@/app/_components/Skills";
 import Image from "next/image";
 import DrawerOpen from "@/app/_components/DrawerOpen";
@@ -35,9 +34,12 @@ const GetReceivedMessage = (type, updateChats, portfolio) => {
             <strong>coding for a little over a year</strong>. Outside of my
             work, I am currently attending school at the Manhattan Early College
             School for Advertising while taking courses at the Borough of
-            Manhattan Community College. On a personal level I am very
-            enthusiastic about trying new things and building connections with
-            people. If you have any questions feel free to reach out via{" "}
+            Manhattan Community College. Throughout my time in school, I have
+            deeply immersed myself in the fundamentals of{" "}
+            <strong>design for the last 3 years.</strong> On a personal level I
+            am very enthusiastic about trying new things and building
+            connections with people. If you have any questions feel free to
+            reach out via{" "}
             <Link
               href={portfolio.linkedIn}
               target="_blank"

@@ -29,6 +29,7 @@ export const getPortfolio = () => {
           "Wireframed 12 web design layouts using Figma, then built them into fully functional pages using React",
           "Integrated a public image API that retrieves images based on room titles, and produced a REST API with 7 unique endpoints, supporting a range of HTTP methods such as GET, POST, and PUT for managing data",
         ],
+        host: "adviceforall.org",
         stack: [
           "ReactJS",
           "NextJS",
