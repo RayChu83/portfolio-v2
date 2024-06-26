@@ -6,6 +6,7 @@ import {
 } from "react-icons/ri";
 import { IoLogoFirebase } from "react-icons/io5";
 import { SiMongodb, SiMui, SiShadcnui } from "react-icons/si";
+import { BiLogoTypescript } from "react-icons/bi";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { SiGreensock } from "react-icons/si";
 
@@ -23,11 +24,22 @@ export const getPortfolio = () => {
     locationSrc: "/location.png",
     projects: [
       {
+        title: "CodeGenius",
+        imageSrc: "/codegenius.png",
+        points: [
+          "Wireframed 8 landing page components using Figma and built them out using ReactJS and incorporated GSAP for seamless animations",
+        ],
+        host: "codegeniusai.vercel.app",
+        stack: ["Typescript", "ReactJS", "NextJS", "Tailwind CSS", "GSAP"],
+        sourceCode: "https://github.com/RayChu83/codegenius",
+      },
+      {
         title: "Advice For All",
         imageSrc: "/adviceforall.png",
         points: [
           "Wireframed 12 web design layouts using Figma, then built them into fully functional pages using React",
           "Integrated a public image API that retrieves images based on room titles, and produced a REST API with 7 unique endpoints, supporting a range of HTTP methods such as GET, POST, and PUT for managing data",
+          "Implemented Vercel analytics and speed insights which demonstrated the Largest Contentful Paint (LCP) time of 0.64 seconds for optimized user experience.",
         ],
         host: "adviceforall.org",
         stack: [
@@ -75,6 +87,11 @@ export const getPortfolio = () => {
       {
         name: "Javascript",
         icon: RiJavascriptFill,
+        description: "Programming language",
+      },
+      {
+        name: "Typscript",
+        icon: BiLogoTypescript,
         description: "Programming language",
       },
       { name: "ReactJS", icon: FaReact, description: "JavaScript library" },
