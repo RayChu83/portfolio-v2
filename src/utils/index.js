@@ -14,7 +14,7 @@ export const getPortfolio = () => {
   return {
     name: "Ray Chu",
     imageSrc: "/ray.jpg",
-    role: "Front End Developer",
+    role: "Front End Engineer",
     email: "rayc12079@gmail.com",
     linkedIn: "https://www.linkedin.com/in/raychu83/",
     resume: "/resume.pdf",
@@ -22,6 +22,21 @@ export const getPortfolio = () => {
     state: "New York, NY",
     borough: "Manhattan",
     locationSrc: "/location.png",
+    experience: [
+      {
+        title: "Front end Engineer",
+        type: "Internship",
+        company: {
+          name: "Unlevered",
+          imageSrc: "/unlevered.png",
+        },
+        start: "July 2024",
+        end: "Present",
+        points: [
+          "Unlevered is the AI-powered SEC platform that enables seamless reading and personalized alerts for filings, IR updates, and earnings transcripts. By breaking down complex financial data such as SEC filings into easily digestible information, we enable users to make accurate, informed decisions quickly.",
+        ],
+      },
+    ],
     projects: [
       {
         title: "CodeGenius",
@@ -130,9 +145,10 @@ export const getPortfolio = () => {
       { name: "GitHub", icon: FaGithub, description: "Code hosting platform" },
     ],
     options: [
-      { optionValue: "About", optionLabel: "More about Ray Chu" },
-      { optionValue: "Projects", optionLabel: "See all projects" },
-      { optionValue: "Skills", optionLabel: "See all skills" },
+      { optionValue: "About", optionLabel: "About Ray Chu" },
+      { optionValue: "Experience", optionLabel: "See experience" },
+      { optionValue: "Projects", optionLabel: "See projects" },
+      { optionValue: "Skills", optionLabel: "See skills" },
     ],
   };
 };
