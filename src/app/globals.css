@@ -6,6 +6,14 @@ html {
   box-sizing: border-box;
 }
 
+strong {
+  @apply font-medium;
+}
+
+.experience-points strong {
+  @apply text-[--primary-color];
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

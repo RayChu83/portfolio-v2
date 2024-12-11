@@ -1,13 +1,7 @@
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import { MdEmail } from "react-icons/md";
-import { FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaFilePdf } from "react-icons/fa6";
-import { FaPhoneAlt } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import { getPortfolio } from "@/utils";
@@ -58,15 +52,14 @@ export default function DrawerOpen({ children }) {
             <FaFilePdf className="text-xl" />
             <span className="text-sm">Resume</span>
           </Link>
-          <Popover>
-            <PopoverTrigger>
-              <article className="bg-gray-100 py-2 px-5 flex flex-col items-center rounded-lg hover:bg-gray-200 transition-colors">
-                <FaPhoneAlt className="text-xl" />
-                <span className="text-sm">Phone</span>
-              </article>
-            </PopoverTrigger>
-            <PopoverContent>{portfolio.phone}</PopoverContent>
-          </Popover>
+          <Link
+            href={portfolio.github}
+            target="_blank"
+            className="bg-gray-100 py-2 px-5 flex flex-col items-center rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            <FaGithub className="text-xl" />
+            <span className="text-sm">GitHub</span>
+          </Link>
         </div>
         <section className="mx-auto my-3 rounded-lg overflow-y-hidden bg-gray-100 max-h-[305px]">
           <Image

@@ -44,9 +44,11 @@ export default function Projects() {
           </Link>
           <ul className="mb-1">
             {project.points.map((point, index) => (
-              <li className="text-sm text-gray-500 list-disc ml-5" key={index}>
-                {point}
-              </li>
+              <li
+                className="text-sm text-gray-500 list-disc ml-5 experience-points"
+                key={index}
+                dangerouslySetInnerHTML={{ __html: point }}
+              />
             ))}
           </ul>
           <div className="flex justify-end">

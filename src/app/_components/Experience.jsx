@@ -9,7 +9,7 @@ export default function Experience() {
       {experience.map((individualExperience, index) => (
         <article
           key={index}
-          className="bg-gray-100 text-black  p-3 rounded-xl w-fit"
+          className="bg-gray-100 text-black p-3 rounded-xl w-full"
         >
           <section className="flex items-center justify-between">
             <span>
@@ -34,9 +34,11 @@ export default function Experience() {
           </section>
           <ul>
             {individualExperience.points.map((point, index) => (
-              <li key={index} className="text-sm text-gray-500 list-disc ml-5">
-                {point}
-              </li>
+              <li
+                key={index}
+                className="text-sm text-gray-500 list-disc ml-5 experience-points"
+                dangerouslySetInnerHTML={{ __html: point }}
+              />
             ))}
           </ul>
         </article>

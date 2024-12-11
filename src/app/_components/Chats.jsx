@@ -10,6 +10,7 @@ import { getPortfolio } from "@/utils";
 
 import React, { useEffect, useRef, useState } from "react";
 import Experience from "./Experience";
+import Testimonials from "./Testimonials";
 
 const GetReceivedMessage = (type, updateChats, portfolio) => {
   let message;
@@ -20,7 +21,7 @@ const GetReceivedMessage = (type, updateChats, portfolio) => {
           <p>
             👋 Hello, my name is {portfolio.name.split(" ")[0]}, and I am a
             <strong> {portfolio.role} </strong>
-            passionate about creating stunning web applications.
+            passionate about developing stunning software applications.
           </p>
           <Cta type={type} updateChats={updateChats} />
         </article>
@@ -32,8 +33,9 @@ const GetReceivedMessage = (type, updateChats, portfolio) => {
           <article className="bg-gray-100 text-black p-3 rounded-xl w-fit">
             <p>
               👋 Hey, I am {portfolio.name.split(" ")[0]} as mentioned earlier,
-              I was born and raised in Manhattan NY, and I recently started my
-              position as a <strong>Front End Engineer</strong> at Unlevered.
+              I was born and raised in Manhattan NY, and I work as a{" "}
+              <strong>Junior Front End Engineer</strong> at Unlevered and{" "}
+              <strong>Co-Founder</strong> and <strong>CTO</strong> at ADVYNA.
             </p>
           </article>
           <article className="bg-gray-100 text-black p-3 rounded-xl w-fit">
@@ -102,9 +104,19 @@ const GetReceivedMessage = (type, updateChats, portfolio) => {
           </span>
           <article className="bg-gray-100 text-black p-3 rounded-xl w-full mt-2">
             <h3>
-              🚀 Above are the technologies/tools I&apos;ve used as a{" "}
-              {portfolio.role}.
+              🚀 Above are the technologies I&apos;ve used as a {portfolio.role}
+              .
             </h3>
+            <Cta type={type} updateChats={updateChats} />
+          </article>
+        </>
+      );
+      break;
+    case "Testimonials":
+      message = (
+        <>
+          <Testimonials />
+          <article className="bg-gray-100 text-black rounded-xl w-full mt-2">
             <Cta type={type} updateChats={updateChats} />
           </article>
         </>
@@ -142,7 +154,7 @@ export default function Chats() {
               key={index}
               className="bg-[--primary-color] text-white self-end p-3 rounded-xl max-w-xl"
             >
-              <p>{chat.message}</p>
+              <p>See {chat.message}</p>
             </article>
           ) : (
             <span key={index} className="self-start max-w-xl w-[95%]">
