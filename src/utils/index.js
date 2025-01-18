@@ -34,7 +34,7 @@ export const getPortfolio = () => {
         start: "October 2024",
         end: "Present",
         points: [
-          "Revolutionizing fashion with <strong>Generative AI</strong> to help customers feel confident and inspired by their wardrobe choices.",
+          "Developing a Software-as-a-Service that leverages <strong>Generative Artificial Intelligence</strong> and <strong>Machine Learning</strong> to streamline the process of consumers picking their day-to-day outfits",
         ],
       },
       {
@@ -45,7 +45,7 @@ export const getPortfolio = () => {
           imageSrc: "/unlevered.png",
         },
         start: "September 2024",
-        end: "Present",
+        end: "January 2025",
         points: [
           "Enhanced API requests, by reducing redundant API calls by <strong>57%</strong> which resulted in over <strong>2.33x</strong> improvement in content loading speeds, through implementing effective API response handling.",
           "Oversaw the development of the front-end user interface by taking charge of over <strong>64%</strong> of new Figma page designs and contributing to the development of <strong>84%</strong> of user flows.",
@@ -53,7 +53,7 @@ export const getPortfolio = () => {
         ],
       },
       {
-        title: "Front-End Engineer",
+        title: "Front-End Engineer Intern",
         type: "Internship",
         company: {
           name: "Unlevered",
@@ -62,7 +62,7 @@ export const getPortfolio = () => {
         start: "July 2024",
         end: "September 2024",
         points: [
-          "Leveraged state management libraries such as MobX to minimize additional requests by over <strong>700ms</strong>, enhancing the overall user experience.",
+          "Leveraged state management libraries such as MobX to minimize redundant data fetching by over <strong>700ms</strong> when navigating throughout the software application, enhancing the overall UX design.",
           "Worked closely with back-end engineers to transfer data securely from the front end to the back end by implementing form validation for over <strong>60</strong> different complex data inputs inputs, and sending CSRF tokens with requests, effectively achieving <strong>0</strong> data breaches.",
           "Increased accessibility scores throughout the entire application by an average of <strong>13.3%</strong> through implementation of ARIA properties which comply with WCAG 2.1 standards.",
         ],
