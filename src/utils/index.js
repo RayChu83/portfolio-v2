@@ -25,8 +25,8 @@ export const getPortfolio = () => {
     locationSrc: "/location.png",
     experience: [
       {
-        title: "Chief Technology Officer",
-        type: "Self-employed",
+        title: "Co-Founder",
+        type: "Full-Time",
         company: {
           name: "Advyna",
           imageSrc: "/advyna.jpg",
@@ -34,7 +34,8 @@ export const getPortfolio = () => {
         start: "October 2024",
         end: "Present",
         points: [
-          "Developing a Software-as-a-Service that leverages <strong>Generative Artificial Intelligence</strong> and <strong>Machine Learning</strong> to streamline the process of consumers picking their day-to-day outfits",
+          "Developed a Software-as-a-Service that leverages <strong>Generative Artificial Intelligence</strong> and <strong>Machine Learning</strong> to streamline the process in which consumers pick their day-to-day outfits.",
+          "Improved server-side authentication runtime by over <strong>92.4%</strong> by implementing direct AWS SDK integration on the back-end, streamlining the previous AWS API Gateway and Lambda function architecture.",
         ],
       },
       {
