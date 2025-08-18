@@ -11,6 +11,7 @@ import { getPortfolio } from "@/utils";
 import React, { useEffect, useRef, useState } from "react";
 import Experience from "./Experience";
 import Testimonials from "./Testimonials";
+import ContactCard from "./ContactCard";
 
 const GetReceivedMessage = (type, updateChats, portfolio) => {
   let message;
@@ -21,62 +22,36 @@ const GetReceivedMessage = (type, updateChats, portfolio) => {
           <p>
             👋 Hello, my name is {portfolio.name.split(" ")[0]}, and I am a
             <strong> {portfolio.role} </strong>
-            passionate about developing stunning software applications.
+            passionate about developing software applications.
           </p>
           <Cta type={type} updateChats={updateChats} />
         </article>
       );
       break;
-    case "About":
+    case "his journey":
       message = (
         <span className="space-y-3">
           <article className="bg-gray-100 text-black p-3 rounded-xl w-fit">
             <p>
-              👋 Hey, I am {portfolio.name.split(" ")[0]} as mentioned earlier,
-              I was born and raised in Manhattan NY, and I work as a{" "}
-              <strong>Junior Front End Engineer</strong> at Unlevered and{" "}
-              <strong>Co-Founder</strong> and <strong>CTO</strong> at ADVYNA.
+              Ever since a young age, I’ve always been fascinated with the
+              monumental impact on our everyday lives generated from new
+              technological innovations. But as I grew older, I’ve seen from
+              firsthand these new innovations slowly drifting further and
+              further away for those of us living in lower income households.
             </p>
           </article>
           <article className="bg-gray-100 text-black p-3 rounded-xl w-fit">
             <p>
-              Outside of my work, I am currently attending school at the
-              Manhattan Early College School for Advertising while taking
-              courses at the Borough of Manhattan Community College. Throughout
-              my time in school, I have deeply immersed myself in the
-              fundamentals of <strong>design for the last 3 years.</strong>
-            </p>
-          </article>
-          <article className="bg-gray-100 text-black p-3 rounded-xl w-fit">
-            <p>
-              On a personal level I am very enthusiastic about trying new things
-              and building connections with people. If you have any questions
-              feel free to reach out via{" "}
-              <Link
-                href={portfolio.linkedIn}
-                target="_blank"
-                className="font-medium text-[--primary-color]"
-              >
-                {" "}
-                LinkedIn{" "}
-              </Link>
-              or through
-              <Link
-                href={`mailto:${portfolio.email}`}
-                target="_blank"
-                className="font-medium text-[--primary-color]"
-              >
-                {" "}
-                Email
-              </Link>
-              .
+              As an aspiring software engineer, I hope to develop and improve
+              everyday technology while maintaining costs at a minimum so
+              everyone can experience new innovative breakthroughs.
             </p>
             <Cta type={type} updateChats={updateChats} />
           </article>
         </span>
       );
       break;
-    case "Experience":
+    case "work experiences":
       message = (
         <>
           <Experience />
@@ -86,7 +61,7 @@ const GetReceivedMessage = (type, updateChats, portfolio) => {
         </>
       );
       break;
-    case "Projects":
+    case "passion projects":
       message = (
         <>
           <Projects />
@@ -96,26 +71,32 @@ const GetReceivedMessage = (type, updateChats, portfolio) => {
         </>
       );
       break;
-    case "Skills":
+    case "technical skills":
       message = (
         <>
           <span className="space-y-2">
             <Skills />
           </span>
-          <article className="bg-gray-100 text-black p-3 rounded-xl w-full mt-2">
-            <h3>
-              🚀 Above are the technologies I&apos;ve used as a {portfolio.role}
-              .
-            </h3>
+          <article className="bg-gray-100 text-black rounded-xl w-full mt-2">
             <Cta type={type} updateChats={updateChats} />
           </article>
         </>
       );
       break;
-    case "Testimonials":
+    case "testimonials received":
       message = (
         <>
           <Testimonials />
+          <article className="bg-gray-100 text-black rounded-xl w-full mt-2">
+            <Cta type={type} updateChats={updateChats} />
+          </article>
+        </>
+      );
+      break;
+    case "contact information":
+      message = (
+        <>
+          <ContactCard />
           <article className="bg-gray-100 text-black rounded-xl w-full mt-2">
             <Cta type={type} updateChats={updateChats} />
           </article>
@@ -154,7 +135,7 @@ export default function Chats() {
               key={index}
               className="bg-[--primary-color] text-white self-end p-3 rounded-xl max-w-xl"
             >
-              <p>See {chat.message}</p>
+              <p>Take me to see {chat.message}</p>
             </article>
           ) : (
             <span key={index} className="self-start max-w-xl w-[95%]">
@@ -169,7 +150,7 @@ export default function Chats() {
                     title={portfolio.name}
                   />
                 </DrawerOpen>
-                <span>
+                <span className="w-full">
                   {GetReceivedMessage(chat.type, setChats, portfolio)}
                 </span>
               </Animation>

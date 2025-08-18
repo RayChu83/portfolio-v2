@@ -1,9 +1,10 @@
 import { v4 } from "uuid";
 import { getPortfolio } from "@/utils";
 
-import React from "react";
+import React, { useState } from "react";
 
 export default function Cta({ type, updateChats }) {
+  const [sent, setSent] = useState(false);
   const { options } = getPortfolio();
   const id = v4();
   const handleChange = (e) => {
@@ -14,18 +15,21 @@ export default function Cta({ type, updateChats }) {
         { direction: "received", type: e.target.value },
       ];
     });
+    setSent(true);
   };
   return (
     <section className="p-3">
       <p className="font-semibold">
-        How {type !== "Welcome" && "else"} may I assist you?
+        What {type !== "Welcome" && "else"} would you like to know?
       </p>
       <div className="block grid-cols-2 grid-rows-2 sm:grid gap-x-4">
         {options
           .filter((option) => option.optionValue !== type)
           .map((option) => (
             <span
-              className="flex items-center gap-2 w-fit"
+              className={`flex items-center gap-2 w-fit ${
+                sent ? "pointer-events-none cursor-not-allowed" : ""
+              }`}
               key={option.optionValue}
             >
               <input
@@ -34,7 +38,7 @@ export default function Cta({ type, updateChats }) {
                 name={`cta-${id}`}
                 value={option.optionValue}
                 onChange={handleChange}
-                className="cursor-pointer"
+                className={`cursor-pointer`}
               />
               <label
                 htmlFor={`${option.optionValue}-${id}`}

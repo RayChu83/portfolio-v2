@@ -16,8 +16,10 @@ export default function Experience() {
               <h3 className="font-bold">{individualExperience.title}</h3>
               <span className="flex flex-col">
                 <small>
-                  {individualExperience.company.name} •{" "}
-                  {individualExperience.type}
+                  <span className="font-semibold underline">
+                    {individualExperience.company.name}
+                  </span>{" "}
+                  • {individualExperience.type}
                 </small>
                 <small className="text-gray-500">
                   {individualExperience.start} - {individualExperience.end}
@@ -29,7 +31,7 @@ export default function Experience() {
               alt={individualExperience.company.name}
               width={50}
               height={50}
-              className="bg-white p-1 rounded-lg"
+              className="bg-white p-1 rounded-lg drop-shadow-md"
             />
           </section>
           <ul>

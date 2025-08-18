@@ -6,7 +6,7 @@ export default function Skills() {
   const { skills } = getPortfolio();
   return skills.map((skill) => (
     <article
-      className="bg-gray-100 text-black  p-3 rounded-xl w-fit flex justify-between items-center gap-3"
+      className="bg-gray-100 text-black p-3 rounded-xl w-fit flex justify-between items-center gap-3"
       key={skill.icon}
     >
       <div>
