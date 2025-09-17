@@ -41,10 +41,10 @@ export const getPortfolio = () => {
         start: "Aug 2024",
         end: "Present",
         points: [
-          "<i>Project description:</i> Free AI-based photo booth web application with over <strong>25+</strong> custom filters, <strong>50</strong> photo strip customization presets custom AI-generated frames, and free download of their final photo strips.",
-          "Improved server-side authentication runtime by over <strong>92.4%</strong> by implementing direct AWS SDK integration on the back-end, streamlining the previous AWS API Gateway and Lambda function architecture.",
-          "Reduced average image storage sizes by <strong>90%</strong> from (<strong>1.7 MB</strong> → <strong>210 KB</strong>) through data compressed serialization, allowing for 19x more data to be stored the browsers localStorage which significantly improves user experience.",
-          "Increased algorithm performance speeds by <strong>78.2%</strong> from (<strong>180.7 MS</strong> → <strong>39.4 MS</strong>) through optimizing data search speeds from linear-time <strong>O(n)</strong> to constant-time <strong>O(1)</strong>.",
+          "Developing an AI-based photo booth web application using React.js which allows users to select custom filters to take photos from and fully customize their photostrip with AI-generated frames/stickers.",
+          "Improved server-side authentication runtime by over 92% by replacing API Gateway + Lambda calls with direct AWS SDK integration on the back-end.",
+          "Reduced average image sizes by 88% from (1.7 MB→ 210 KB) through data compressed serialization, allowing for 19x more storage on the browsers localStorage API which improves user experience.",
+          "Increased search performance speeds by 78% from (180.7ms→ 39.4ms) by replacing linear speed array search with constant speed set-based search.",
         ],
       },
       {
@@ -57,9 +57,9 @@ export const getPortfolio = () => {
         start: "Jul 2025",
         end: "Aug 2025",
         points: [
-          "Conducted end-to-end software performance testing by developing <strong>3</strong> unique test cases which had a <strong>71%</strong> step success rate on simulating the workflow and behavior of users within the software application.",
-          "Ensured software accessibility for all users by performing <strong>26</strong> software accessibility tests on Azure DevOps which achieved a <strong>72%</strong> pass rate which helped identify over <strong>50</strong> software accessibility issues for developers to fix.",
-          "Utilized the Microsoft Accessibility Insights toolkit to assess over <strong>30</strong> web pages which helped identify over <strong>175</strong> software accessibility issues, improving web accessibility compliance.",
+          "Developed and executed 3 end-to-end software performance test cases which simulated core user workflows, achieving a 71% step success rate and validated critical flaws.",
+          "Enhanced software accessibility for users by performing 26 accessibility tests in Azure DevOps which achieved a 72% pass rate and identified 50+ accessibility issues.",
+          "Assessed 30+ web pages with Microsoft Accessibility Insights, identifying 175+ accessibility issues which improved compliance to the Web Content Accessibility Guidelines (WCAG).",
         ],
       },
       {
@@ -72,9 +72,9 @@ export const getPortfolio = () => {
         start: "Sep 2024",
         end: "Jan 2025",
         points: [
-          "Decreased the front-end content loading speeds by over <strong>2.3x</strong> by eliminating over <strong>57%</strong> of redundant API request calls made to the back-end which delayed UI rendering.",
-          "Developed and implemented a reusable table component across <strong>11</strong> different pages that displays financial data fetched from the server, reducing over <strong>52.9%</strong> of redundant code required to display the data.",
-          "Orchestrated the development of the front-end user interface by taking charge of over <strong>64%</strong> of new Figma web designs and contributing to the development of <strong>84%</strong> of web pages.",
+          "Improved the front-end loading times by 2.3x by eliminating over 57% of redundant API request calls made to the back-end, which reduced the render latency.",
+          "Designed and developed a custom React table component used across 11 pages to render server-side financial data, cutting duplicate front-end code by 50%.",
+          "Led the UI implementation from Figma to React, by designing over 64% of new Figma web designs and contributed to the development of 84% of new pages.",
         ],
       },
       {
@@ -87,9 +87,9 @@ export const getPortfolio = () => {
         start: "Jul 2024",
         end: "Sep 2024",
         points: [
-          "Leveraged MobX state management to store server fetched data, improving the overall user experience by eliminating <strong>700 MS</strong> of additional loading when navigating across the website application.",
-          "Developed form validation across over <strong>60</strong> data inputs and implemented Cross-Site Request Forgery (CSRF) tokens within the request to ensure faultless data entry into the back-end MongoDB and AWS database.",
-          "Integrated RESTful APIs including generative AI models, SEC filings data, and financial data analysis APIs into the front-end, transforming their JSON responses into responsive and interactive user interfaces with React 18.",
+          "Used MobX to cache fetched data from the server which eliminated 700ms of additional load when navigating across the website application.",
+          "Implemented client-side form validation for 60+ inputs and added  Cross-Site Request Forgery (CSRF) protection to secure requests to backend databases such as MongoDB and AWS S3.",
+          "Integrated RESTful APIs (OpenAI models, SEC/financial data) into the front-end, transforming their JSON responses into responsive React 18 user interfaces.",
         ],
       },
     ],
